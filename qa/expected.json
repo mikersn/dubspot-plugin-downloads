@@ -1,0 +1,101 @@
+{
+  "tag": "analog-2026.11",
+  "products": [
+    {
+      "name": "Dubspot EQP1",
+      "version": "1.0.0",
+      "package": "Dubspot-EQP1-1.0.0-macOS.pkg",
+      "sha256": "cd9e3a10bf89b7ebd9980f6e16a83fc4e90435efd40ac8b289958aa23de029a5",
+      "au": [
+        "aufx",
+        "Deq1",
+        "Dbsp"
+      ],
+      "receipts": [
+        "com.dubspot.eqp1.pkg.au",
+        "com.dubspot.eqp1.pkg.vst3",
+        "com.dubspot.eqp1.pkg.aax",
+        "com.dubspot.eqp1.pkg.docs"
+      ],
+      "trees": {
+        "Library/Application Support/Avid/Audio/Plug-Ins/Dubspot EQP1.aaxplugin": "98517322e74c6370142e79b081b5474ded4788246564b7fcce7e84a1ca36719c",
+        "Library/Audio/Plug-Ins/Components/Dubspot EQP1.component": "499b05c9523aec4ae6f772ebe7ee9b77a0e1557e60463cde962f20812494da35",
+        "Library/Audio/Plug-Ins/VST3/Dubspot EQP1.vst3": "ed329ebe5fff6a8ba228e27090674ef65b7f2801956663e6e6de64a6b28b6ff4",
+        "Library/Application Support/Dubspot/EQP1/Documentation": "0fd6d19f035e515443c824c3a519bef2718d5c2739771fb8ec2f21baa78c1ff2"
+      }
+    },
+    {
+      "name": "Dubspot M15",
+      "version": "1.0.0",
+      "package": "Dubspot-M15-1.0.0-macOS.pkg",
+      "sha256": "ab50d395c397a705759f0af2d6fd71f16545762ffd710469e4ff993ad47cba04",
+      "au": [
+        "aufx",
+        "Dm15",
+        "Dbsp"
+      ],
+      "receipts": [
+        "com.dubspot.m15.pkg.au",
+        "com.dubspot.m15.pkg.vst3",
+        "com.dubspot.m15.pkg.aax",
+        "com.dubspot.m15.pkg.docs"
+      ],
+      "trees": {
+        "Library/Application Support/Avid/Audio/Plug-Ins/Dubspot M15.aaxplugin": "7ee8977433a5d1e73e70e8d271f2b44105661347dbfbf037e7085effe842365e",
+        "Library/Audio/Plug-Ins/Components/Dubspot M15.component": "de63789210756844c2c0ae227e990ac7a45d2cbc1eb59920b8e395b28306842f",
+        "Library/Audio/Plug-Ins/VST3/Dubspot M15.vst3": "96fdec8398274e21a97add7839b561eb08ecfb6085ddfdf3b3b2238788155e0c",
+        "Library/Application Support/Dubspot/M15/Documentation": "7325dd83cea48080f20685c0269f2bd5a183c79875123df9de1a9ba6a8ad660c"
+      }
+    },
+    {
+      "name": "Dubspot SM-1",
+      "version": "1.0.0",
+      "package": "Dubspot-SM1-1.0.0-macOS.pkg",
+      "sha256": "ce05e157dc976857fcf4bc33f4b9ea78d85e1a13d485a8660ad0d22955a16c93",
+      "au": [
+        "aumu",
+        "Ptwk",
+        "Dbsp"
+      ],
+      "receipts": [
+        "com.dubspot.patchwork.pkg.au",
+        "com.dubspot.patchwork.pkg.vst3",
+        "com.dubspot.patchwork.pkg.aax",
+        "com.dubspot.patchwork.pkg.docs"
+      ],
+      "trees": {
+        "Library/Application Support/Avid/Audio/Plug-Ins/Dubspot SM-1.aaxplugin": "a18502df2d0da6b799b3299c1a82b95cd978bd47f986f2bda639af842ea29a3a",
+        "Library/Audio/Plug-Ins/Components/Dubspot SM-1.component": "17f43415930f9262ef52e44975dcfeb046567ae42ea02674456ed6d3585346fe",
+        "Library/Audio/Plug-Ins/VST3/Dubspot SM-1.vst3": "8ac631406d1da4d1bebe2aedf050da51af7b2e90f8e73d5ff3cd6e13a371b13f",
+        "Library/Application Support/Dubspot/SM1/Documentation": "95127475fe09be2d2cc5a66bf5dfaaccf7484a3594ad6cc2969e3f13b6108f59"
+      }
+    },
+    {
+      "name": "Dubspot VintageSub",
+      "version": "1.0.1",
+      "package": "Dubspot-VintageSub-1.0.1-macOS.pkg",
+      "sha256": "24ec5f461a0868c9efc91f38b83676a1c58929aabb48ba406395750dce9c4b5d",
+      "au": [
+        "aumu",
+        "Vsb1",
+        "Dbsp"
+      ],
+      "receipts": [
+        "com.dubspot.vintagesub.pkg.au",
+        "com.dubspot.vintagesub.pkg.vst3",
+        "com.dubspot.vintagesub.pkg.aax",
+        "com.dubspot.vintagesub.pkg.docs"
+      ],
+      "trees": {
+        "Library/Application Support/Avid/Audio/Plug-Ins/Dubspot VintageSub.aaxplugin": "c0755e2a09adc55a19b70a1a443e38eca5ef12a4b98a4352f76ca404572b7286",
+        "Library/Audio/Plug-Ins/Components/Dubspot VintageSub.component": "471868295a7ccc5d82981f3d2314626d9494bb7291c3d036d08764557585c5e1",
+        "Library/Audio/Plug-Ins/VST3/Dubspot VintageSub.vst3": "55809c83ec2985835078418e923c3839096c9a310478a8b160f8813759a95b48",
+        "Library/Application Support/Dubspot/VintageSub/Documentation": "3241321373d62630fe38ae17314ace6a85ccd7c3d203d5723bc6ce7261b4799a"
+      }
+    }
+  ],
+  "bundle": {
+    "package": "Dubspot-Analog-Bundle-1.0.0-macOS.pkg",
+    "sha256": "7a9e5eff874a994feaaa47b209b314778ba21b79717ade33063b065c024661b4"
+  }
+}

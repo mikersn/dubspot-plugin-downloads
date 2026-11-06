@@ -1,0 +1,37 @@
+name: Mac installer qualification
+on:
+  push:
+    branches: [qualification/analog-macos]
+    paths: ['.github/workflows/verify-macos.yml', 'qa/**']
+  workflow_dispatch:
+permissions: {}
+jobs:
+  installers:
+    if: github.repository == 'mikersn/dubspot-plugin-downloads' && github.ref == 'refs/heads/qualification/analog-macos'
+    permissions:
+      contents: write  # GitHub only exposes drafts to users with push access.
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {runner: macos-15, arch: arm64}
+          - {runner: macos-15-intel, arch: x86_64}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+    steps:
+      - name: Get the exact public verification code, without credentials
+        env:
+          GIT_TERMINAL_PROMPT: '0'
+        run: |
+          git init -q .
+          git fetch -q --depth=1 https://github.com/mikersn/dubspot-plugin-downloads.git "$GITHUB_SHA"
+          git checkout -q --detach FETCH_HEAD
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+      - name: Download the five exact candidates without publishing them
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 qa/macos_installers.py download
+      - name: Install and validate on the fresh Mac
+        env:
+          EXPECTED_ARCH: ${{ matrix.arch }}
+        run: python3 -u qa/macos_installers.py qualify
