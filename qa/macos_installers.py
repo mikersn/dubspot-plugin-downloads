@@ -95,13 +95,15 @@ def validate_aus():
     failed = []
     for item in PRODUCTS:
         good = False
-        for attempt in range(3):
+        for attempt in range(6):
             got = subprocess.run(["/usr/bin/auval", "-v", *item["au"]], text=True,
                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=100)
             print(got.stdout, flush=True)
             good = got.returncode == 0 and "AU VALIDATION SUCCEEDED" in got.stdout
-            if good or "couldn't be opened" not in got.stdout.lower() and "not found" not in got.stdout.lower():
+            if good or not any(x in got.stdout.lower() for x in ("couldn't be opened", "not found", "didn't find the component")):
                 break
+            if attempt == 0:
+                subprocess.run(["/usr/bin/killall", "-TERM", "AudioComponentRegistrar"], capture_output=True)
             time.sleep(3)
         print("AU validation:", item["name"], good, flush=True)
         if not good:
