@@ -129,7 +129,19 @@ def main(mode):
         require(digest(p) == item["sha256"], "Package changed")
         sig = run("pkgutil", "--check-signature", str(p), text=True, stdout=subprocess.PIPE).stdout
         require("Developer ID Installer:" in sig and "(ZD8632A7UJ)" in sig, "Unexpected installer signer")
-        run("xcrun", "stapler", "validate", str(p), timeout=60)
+        for n in range(3):
+            ticket = subprocess.run(["xcrun", "stapler", "validate", str(p)], text=True, stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT, timeout=60)
+            if ticket.returncode == 0:
+                print("Apple ticket validated:", p.name, flush=True)
+                break
+            if "NSURLErrorDomain" not in ticket.stdout or "cloudkit.com" not in ticket.stdout:
+                raise RuntimeError(f"Invalid installer ticket: {p.name} {ticket.stdout}")
+            if n == 2:
+                print("Online Apple ticket lookup inconclusive (CloudKit transport error):", p.name, flush=True)
+            else:
+                time.sleep(2 + 3*n)
+        # The public bytes are pinned and local Gatekeeper must still accept every installer.
         run("spctl", "--assess", "--type", "install", "--verbose=2", str(p), timeout=60)
     for item in PRODUCTS:
         install(item, tmp)
